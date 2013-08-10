@@ -41,6 +41,11 @@ public class Game extends Canvas{
 		g.setColor(Color.RED);
 		g.fillOval(15, 15, 15, 15);
 		
+		
+		//Oei oei eoi
+		
+		
+		
 		//stop with stuff to render
 		int ww = getWidth();
 		int hh = getHeight();
@@ -68,7 +73,7 @@ public class Game extends Canvas{
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		for(int i = 0; i<6;i++){
+		for(int i = 0; i<8;i++){
 			game.render();
 		}
 		
