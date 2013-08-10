@@ -4,8 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class LogInScreen extends JFrame {
@@ -13,6 +15,9 @@ public class LogInScreen extends JFrame {
 
 	private JTextField updates = new JTextField();
 	private JButton play = new JButton();
+	private String imgName = "";
+	private ImageIcon img = new ImageIcon(LogInScreen.class.getResource("")+imgName);
+	private JLabel label = new JLabel();
 	private String[] args;
 	
 	private LogInScreen(){
@@ -30,8 +35,10 @@ public class LogInScreen extends JFrame {
 		play.setToolTipText("Play!");
 		updates.setToolTipText("These are the updates of out game");
 		updates.setText(getUpdates());
-		updates.setEditable(false);		
+		updates.setEditable(false);
+		label.setIcon(img);
 		this.add(updates, BorderLayout.NORTH);
+		this.add(label,BorderLayout.NORTH);
 		this.add(play , BorderLayout.SOUTH);
 	}
 	
