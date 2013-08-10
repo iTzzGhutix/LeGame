@@ -25,6 +25,7 @@ public class LogInScreen extends JFrame {
 	
 	private LogInScreen(){
 		super("LeGame");
+		new StringPanel();
 		try {
 			img = new ImageIcon(ImageIO.read(LogInScreen.class.getResourceAsStream(imgName)));
 		} catch (IOException e) {
