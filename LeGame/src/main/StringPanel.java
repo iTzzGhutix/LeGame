@@ -75,6 +75,7 @@ public class StringPanel extends JPanel {
 	  
 	  List list = new List();
 	  list.add("Hello");
+	  
 	  list.setBounds(10, 60, 480, 379);
 	  add(list);
 	  

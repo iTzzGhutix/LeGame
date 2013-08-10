@@ -6,10 +6,10 @@ import java.util.List;
 public class Kleinheid {
 
 	public String name;
-	public int rek;
+	public double rek;
 	public List<Kleinheid> compat = new ArrayList<Kleinheid>();
 	
-	public Kleinheid(String name, int rek){
+	public Kleinheid(String name, double rek){
 		this.name = name;
 		this.rek = rek;
 	}
@@ -18,6 +18,13 @@ public class Kleinheid {
 		for(Kleinheid k:com){
 			compat.add(k);
 		}
+	}
+	
+	public double calc(Kleinheid k, double value){
+		if(compat.contains(k)){
+			return (rek*k.rek)*value;
+		}
+		return -1;
 	}
 	
 	
