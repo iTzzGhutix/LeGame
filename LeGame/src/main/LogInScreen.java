@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class LogInScreen extends JFrame {
@@ -17,7 +18,7 @@ public class LogInScreen extends JFrame {
 
 	private JTextField updates = new JTextField();
 	private JButton play = new JButton();
-	private String imgName = "/firstTry.png";
+	private String imgName = "/res/firstTry.png";
 	private ImageIcon img;
 	private JLabel label = new JLabel();
 	private String[] args;
@@ -68,7 +69,6 @@ public class LogInScreen extends JFrame {
 	
 	public void play(){
 		this.setEnabled(false);
-		System.out.println("Ik doe ook commit :'(");
 		this.dispose();
 		
 		Game.main(args);
