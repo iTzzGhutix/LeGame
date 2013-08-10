@@ -7,6 +7,7 @@ public class Start {
 		String bram = "bram is jarvar master";
 		if(bram.contains("master")){
 			System.out.println("Wow that is cool");
+			
 		}
 		
 	}
