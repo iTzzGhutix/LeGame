@@ -3,7 +3,9 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,13 +17,18 @@ public class LogInScreen extends JFrame {
 
 	private JTextField updates = new JTextField();
 	private JButton play = new JButton();
-	private String imgName = "";
-	private ImageIcon img = new ImageIcon(LogInScreen.class.getResource("")+imgName);
+	private String imgName = "/firstTry.png";
+	private ImageIcon img;
 	private JLabel label = new JLabel();
 	private String[] args;
 	
 	private LogInScreen(){
 		super("LeGame");
+		try {
+			img = new ImageIcon(ImageIO.read(LogInScreen.class.getResourceAsStream(imgName)));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		play.setText("Play");
@@ -37,9 +44,9 @@ public class LogInScreen extends JFrame {
 		updates.setText(getUpdates());
 		updates.setEditable(false);
 		label.setIcon(img);
-		this.add(updates, BorderLayout.NORTH);
 		this.add(label,BorderLayout.NORTH);
-		this.add(play , BorderLayout.SOUTH);
+		this.add(updates, BorderLayout.WEST);
+		this.add(play , BorderLayout.EAST);
 	}
 	
 	private String getUpdates() {
