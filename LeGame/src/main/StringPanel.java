@@ -88,7 +88,7 @@ public class StringPanel extends JPanel {
 	  frame.pack();
 	  frame.setLocationRelativeTo(null);
 	  frame.setVisible(true);
-	  this.setupPanel();
+	  this.setupPanel(); 
 	 }
 	 public void setStufflist(String[] s){
 		 s = namen;
