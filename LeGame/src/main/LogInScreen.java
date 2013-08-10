@@ -54,6 +54,7 @@ public class LogInScreen extends JFrame {
 	
 	public void play(){
 		this.setEnabled(false);
+		System.out.println("Ik doe ook commit :'(");
 		this.dispose();
 		
 		Game.main(args);
