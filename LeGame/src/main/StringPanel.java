@@ -33,12 +33,12 @@ public class StringPanel extends JPanel {
 	private String TITLE = "The title";
 	private JPasswordField pwdPassword;
 	private JTextField txtUsername;
-	private String[] stuff;
+	String namen[] = new String[]{"Filips", "Adams", "Declercq"};
 	
 	
 	public StringPanel() {
 		
-		JFrame Panel = new JFrame(this.TITLE);
+		
 		this.setMinimumSize(new Dimension(WIDTH,HEIGHT));
 		this.setMaximumSize(new Dimension(WIDTH,HEIGHT));
 		this.setPreferredSize(new Dimension(WIDTH,HEIGHT));
@@ -73,8 +73,10 @@ public class StringPanel extends JPanel {
 	  menuBar.setBounds(0, 0, 500, 20);
 	  add(menuBar); 
 	  
-	  List list = new List();
+	  List list = new List(namen.length, false);
+	  
 	  list.setBounds(10, 60, 480, 379);
+	  list.add("Sup");
 	  add(list);
 	  
 	  JTextPane txtpnSelectStuffFrom = new JTextPane();
@@ -87,6 +89,9 @@ public class StringPanel extends JPanel {
 	  frame.setLocationRelativeTo(null);
 	  frame.setVisible(true);
 	  this.setupPanel();
+	 }
+	 public void setStufflist(String[] s){
+		 s = namen;
 	 }
 	 private  void setupPanel(){
 	  setBackground(Color.WHITE);
