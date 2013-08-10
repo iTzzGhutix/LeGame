@@ -31,7 +31,6 @@ public class Game extends Canvas{
 	public void render(){
 		BufferStrategy buffer = this.getBufferStrategy();
 		if(buffer==null){
-			System.out.println("Eerst");
 			this.createBufferStrategy(2);
 			requestFocus();
 			return;
@@ -41,7 +40,6 @@ public class Game extends Canvas{
 		//Put stuff here to render
 		g.setColor(Color.RED);
 		g.fillOval(15, 15, 15, 15);
-		
 		
 		//stop with stuff to render
 		int ww = getWidth();
@@ -53,11 +51,6 @@ public class Game extends Canvas{
 		gBase.dispose();
 		buffer.show();
 	}
-	
-	
-	
-	
-	
 	
 	
 	public static void main(String[] args){
@@ -75,11 +68,9 @@ public class Game extends Canvas{
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		game.render();
-		game.render();
-		game.render();
-		game.render();
-		game.render();
+		for(int i = 0; i<6;i++){
+			game.render();
+		}
 		
 		
 	}
