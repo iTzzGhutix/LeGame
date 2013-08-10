@@ -14,17 +14,12 @@ import javax.swing.JLayeredPane;
 import javax.swing.JMenuBar;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-
 import java.awt.Button;
-
 import javax.swing.JProgressBar;
 import javax.swing.JInternalFrame;
 import javax.swing.JDesktopPane;
-
 import java.awt.List;
-
 import javax.swing.JTextPane;
-
 import java.awt.Font;
 
 public class StringPanel extends JPanel {
@@ -33,8 +28,6 @@ public class StringPanel extends JPanel {
 	private String TITLE = "The title";
 	private JPasswordField pwdPassword;
 	private JTextField txtUsername;
-	private String[] stuff;
-	
 	
 	public StringPanel() {
 		
