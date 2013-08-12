@@ -1,5 +1,6 @@
 package david;
 
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -8,7 +9,9 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 
 
 public class DavidCrazyStuff {
@@ -55,14 +58,29 @@ public class DavidCrazyStuff {
 		for (int i = 0; i < engListK.size(); i++) {
 			eng[i] = engListK.get(i).name;
 		}			
+		String[] mtr = new String[engListK.size()];
+		for (int i = 0; i < mtrListK.size(); i++) {
+			mtr[i] = mtrListK.get(i).name;
+		}
 		
 		engList.setListData(eng);
+		engList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		engList.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+		engList.setVisibleRowCount(-1);
+		JScrollPane listScrollerEng = new JScrollPane(engList);
+		listScrollerEng.setPreferredSize(new Dimension(60, 50));
 		
+		mtrList.setListData(eng);
+		mtrList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		mtrList.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+		mtrList.setVisibleRowCount(-1);
+		JScrollPane listScrollerMtr = new JScrollPane(mtrList);
+		listScrollerMtr.setPreferredSize(new Dimension(60, 50));
 		
 		frame.setLayout(new FlowLayout());
-		frame.add(engList);
+		frame.add(listScrollerEng);
 		frame.add(input);
-		frame.add(mtrList);
+		frame.add(listScrollerMtr);
 		frame.add(calc);
 		frame.add(output);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
