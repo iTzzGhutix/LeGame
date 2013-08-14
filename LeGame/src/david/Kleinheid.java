@@ -31,7 +31,7 @@ public class Kleinheid {
 	}
 	
 	public double calc(Kleinheid k, double value){
-		
+		//to come
 		
 		
 		return value;
