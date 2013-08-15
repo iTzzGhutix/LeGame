@@ -77,6 +77,8 @@ public class DavidCrazyStuff {
 		JScrollPane listScrollerMtr = new JScrollPane(mtrList);
 		listScrollerMtr.setPreferredSize(new Dimension(60, 50));
 		
+		currentMtr.clear();
+		
 		frame.setLayout(new FlowLayout());
 		frame.add(listScrollerEng);
 		frame.add(input);

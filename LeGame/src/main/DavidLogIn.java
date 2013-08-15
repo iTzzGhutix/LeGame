@@ -18,8 +18,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class DavidLogIn {
 
-	private static final int WIDTH = 2560;
-	private static final int HEIGHT = 1600;
+	private static final int WIDTH = 800;
+	private static final int HEIGHT = 550;
 	final String TITLE = "Log in iTzz & David games";
 	JFrame frame;
 	Rectangle rPass = new Rectangle(605,490,93,20);

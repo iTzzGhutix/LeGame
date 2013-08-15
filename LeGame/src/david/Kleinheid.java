@@ -66,6 +66,12 @@ public class Kleinheid {
 		Grootheid(double toMtr){
 			this.toMtr = toMtr;
 		}
+
+		
+		public double getToMtr() {
+			return toMtr;
+		}
+
 	}
 	
 }
