@@ -12,22 +12,45 @@ import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 
 
-public class Game extends Canvas{
+public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 
 	public static String TITLE = "LeGame";
 	public static final int WIDTH = 500;
 	public static final int HEIGHT = 500;
+	public boolean isRunning = false;
+	public World world;
 	
+	public void start() {
+		isRunning = true;
+		new Thread(this).start();
+	}
 	
+	public void stop() {
+		isRunning = false;
+	}
 	
+	@Override
+	public void run() {
+		init();
+
+		while (isRunning) {
+
+			tick();
+			render();
+
+			try {
+				Thread.sleep(7);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	
-	
-	
-	
-	
-	
-	
+	public void init() {
+
+	}
+
 	public void render(){
 		BufferStrategy buffer = this.getBufferStrategy();
 		if(buffer==null){
@@ -38,14 +61,8 @@ public class Game extends Canvas{
 		BufferedImage img = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g = img.createGraphics();
 		//Put stuff here to render
-		g.setColor(Color.RED);
+		g.setColor(Color.BLUE);
 		g.fillOval(15, 15, 15, 15);
-		
-		
-		//Oei oei eoi
-		
-		
-		
 		//stop with stuff to render
 		int ww = getWidth();
 		int hh = getHeight();
@@ -57,6 +74,9 @@ public class Game extends Canvas{
 		buffer.show();
 	}
 	
+	public void tick() {
+
+	}
 	
 	public static void main(String[] args){
 		Game game = new Game();
@@ -73,11 +93,8 @@ public class Game extends Canvas{
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		for(int i = 0; i<8;i++){
-			game.render();
-		}
 		
-		
+		game.start();
 	}
 
 }

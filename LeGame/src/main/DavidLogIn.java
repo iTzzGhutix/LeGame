@@ -249,8 +249,8 @@ public class DavidLogIn {
 	}
 
 	public void save() {
-		String data = (options.getSaveUsername() ? name.getText() : "") + "\n"
-				+ (options.getSavePassword() ? password.getText() : "");
+		String data = (options.getSaveUsername() ? name.getText() : " ") + "\n"
+				+ (options.getSavePassword() ? password.getText() : " ");
 		if (options.getSaveUsername() || options.getSavePassword()) {
 			try {
 				userPassSave.override(data);
@@ -264,7 +264,7 @@ public class DavidLogIn {
 		private static final long serialVersionUID = 1L;
 		private final String hint;
 
-	    public HintTextField(final String hint) {
+		public HintTextField(String hint) {
 	        super(hint);
 	        this.hint = hint;
 	        super.addFocusListener(this);

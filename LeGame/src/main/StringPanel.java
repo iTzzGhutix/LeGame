@@ -1,44 +1,30 @@
 package main;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GraphicsConfiguration;
-import java.awt.SystemColor;
-import java.awt.Color;
-
-import javax.swing.JPasswordField;
-import javax.swing.JLayeredPane;
-import javax.swing.JMenuBar;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-
 import java.awt.Button;
-
-import javax.swing.JProgressBar;
-import javax.swing.JInternalFrame;
-import javax.swing.JDesktopPane;
-
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.List;
+import java.awt.SystemColor;
 
+import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
-import java.awt.Font;
-
 public class StringPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 	public static final int WIDTH = 500;
 	public static final int HEIGHT = 500;
 	private String TITLE = "The title";
 	private JPasswordField pwdPassword;
 	private JTextField txtUsername;
-	private String[] stuff;
-	
-	
 	public StringPanel() {
 		
-		JFrame Panel = new JFrame(this.TITLE);
+		new JFrame(this.TITLE);
 		this.setMinimumSize(new Dimension(WIDTH,HEIGHT));
 		this.setMaximumSize(new Dimension(WIDTH,HEIGHT));
 		this.setPreferredSize(new Dimension(WIDTH,HEIGHT));
