@@ -14,10 +14,9 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
@@ -65,14 +64,25 @@ public class DavidLogIn {
 	private JLabel logo;
 		
 	public DavidLogIn() {
+		BufferedInputStream in = null;
 		try {
-			URL link = new URL("http://www.google.com/");
-			BufferedReader in = new BufferedReader(
-	        new InputStreamReader(link.openStream()));
-	        pullVersion = Float.parseFloat(in.readLine());
+			URL link = new URL(
+					"https://dl.dropboxusercontent.com/s/0jzj27jaxesb5hh/version?token_hash=AAFtacItVE8vkpCnkhsTjRW8qHdKasxG1CQdDkxQj49w8g&dl=1");
+			in = new BufferedInputStream((link).openStream());
+			byte[] data = new byte[1024];
+			in.read(data, 0, 1024);
+			pullVersion = Float.parseFloat(new String(data));
 		} catch (IOException | NumberFormatException e) {
 			e.printStackTrace();
 			pullVersion = options.getVersion();
+		} finally {
+			if (in != null) {
+				try {
+					in.close();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
 		}
 		
 		try {

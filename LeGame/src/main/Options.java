@@ -25,8 +25,6 @@ public class Options {
 		savePassword = sP;
 		autoUpdate = aU;
 		version = v;
-		System.out.println(sU);
-		System.out.println(sP);
 		saveOptions();
 	}
 	
